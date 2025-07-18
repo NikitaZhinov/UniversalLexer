@@ -1,7 +1,8 @@
-﻿#include "../include/lexer/lexer.h"
+#include "../include/lexer/lexer.h"
 
 #include <locale>
 #include <codecvt>
+#include <filesystem>
 
 std::vector<lexer::CombiningTokens>::iterator
 lexer::Lexer::_isCombiningToken(const Token& token) {
@@ -47,8 +48,9 @@ bool lexer::Lexer::_isCloseToken(
 
 void lexer::Lexer::_pushText(_CurrentStats& current_stats,
                              std::vector<lexer::CombiningTokens>::iterator& close_token) {
-    while (!current_stats.file.eof()) {
-        current_stats.c = current_stats.file.get();
+    while (current_stats.char_it != current_stats.end_it) {
+        current_stats.c = *current_stats.char_it;
+        ++current_stats.char_it;
         current_stats.token_name.push_back(current_stats.c);
         current_stats.token_line.original.push_back(current_stats.c);
         if (_isCloseToken(current_stats, close_token)) {
@@ -236,37 +238,57 @@ std::vector<lexer::TokenLine> lexer::Lexer::createTokens(const char* file_name) 
 }
 
 std::vector<lexer::TokenLine> lexer::Lexer::createTokens(std::wifstream& file) {
-    _CurrentStats current_stats { 1, {}, L"", {}, 0, file };
-
 #ifdef __linux__
     file.imbue(std::locale(std::locale(), new std::codecvt_utf8<wchar_t>));
 #endif
 
+    std::vector<lexer::TokenLine> tokens;
+
     if (file.is_open()) {
+        file.seekg(0, std::ios_base::end);
+
+        std::wstring str;
+        str.reserve(file.tellg());
+
+        file.seekg(0, std::ios_base::beg);
+
         while (!file.eof()) {
-            current_stats.c = file.get();
-            current_stats.token_line.original.push_back(current_stats.c);
-
-            if (_individual_chars.find(current_stats.c) != std::wstring::npos) {
-                _addIndividualChars(current_stats);
-            } else if (_isCharFromSpecialAlhpabet(current_stats.c)) {
-                _addSpecialAlphabet(current_stats);
-            } else if (_separators.find(current_stats.c) != std::wstring::npos) {
-                _pushToken(current_stats);
-            } else {
-                current_stats.token_name.push_back(current_stats.c);
-            }
-
-            if (current_stats.c == L'\n') {
-                _nextLine(current_stats);
-            }
+            str.push_back(file.get());
         }
-        current_stats.token_name.pop_back();
-        current_stats.token_line.original.pop_back();
-        _nextLine(current_stats);
+
+        tokens = createTokens(str);
     } else {
         throw std::runtime_error("file is not exist");
     }
+
+    return tokens;
+}
+
+std::vector<lexer::TokenLine> lexer::Lexer::createTokens(const std::wstring& str) {
+    _CurrentStats current_stats { 1, {}, L"", {}, 0, str.begin(), str.end() };
+
+    while (current_stats.char_it != current_stats.end_it) {
+        current_stats.c = *current_stats.char_it;
+        ++current_stats.char_it;
+        current_stats.token_line.original.push_back(current_stats.c);
+
+        if (_individual_chars.find(current_stats.c) != std::wstring::npos) {
+            _addIndividualChars(current_stats);
+        } else if (_isCharFromSpecialAlhpabet(current_stats.c)) {
+            _addSpecialAlphabet(current_stats);
+        } else if (_separators.find(current_stats.c) != std::wstring::npos) {
+            _pushToken(current_stats);
+        } else {
+            current_stats.token_name.push_back(current_stats.c);
+        }
+
+        if (current_stats.c == L'\n') {
+            _nextLine(current_stats);
+        }
+    }
+    current_stats.token_name.pop_back();
+    current_stats.token_line.original.pop_back();
+    _nextLine(current_stats);
 
     return current_stats.token_lines;
 }

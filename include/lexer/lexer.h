@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "token.h"
 
@@ -17,7 +17,8 @@ namespace lexer {
             std::wstring token_name;
             TokenLine token_line;
             wchar_t c;
-            std::wistream& file;
+            std::wstring::const_iterator char_it;
+            std::wstring::const_iterator end_it;
         };
 
         std::vector<std::wstring> _special_alphabets;
@@ -198,15 +199,22 @@ namespace lexer {
         /**
          * @brief Opens the file and starts lexical analysis of the file contents.
          *
-         * @param file_name - a file name.
+         * @param file_name - the file contents name.
          */
         std::vector<TokenLine> createTokens(const char* file_name);
 
         /**
          * @brief Starts lexical analysis of the file contents.
          *
-         * @param file - a file.
+         * @param file - the file contents.
          */
         std::vector<TokenLine> createTokens(std::wifstream& file);
+
+        /**
+         * @brief Starts lexical analysis of the string contents.
+         *
+         * @param str - the string contents.
+         */
+        std::vector<TokenLine> createTokens(const std::wstring& str);
     };
 }  // namespace lexer
