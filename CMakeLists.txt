@@ -25,8 +25,9 @@ add_library(${PROJECT_NAME} STATIC "include/lexer/lexer.h" "src/lexer.cpp" "incl
 find_package(Doxygen REQUIRED)
 if(DOXYGEN_FOUND)
 	message("Doxygen build started")
-	add_custom_target(${PROJECT_NAME}Doxygen ALL
+	add_custom_target(doxygen ALL
         COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         VERBATIM)
 	message("Doxygen build finished")
 else()

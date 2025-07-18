@@ -286,8 +286,12 @@ std::vector<lexer::TokenLine> lexer::Lexer::createTokens(const std::wstring& str
             _nextLine(current_stats);
         }
     }
-    current_stats.token_name.pop_back();
-    current_stats.token_line.original.pop_back();
+    if (!current_stats.token_name.empty()) {
+        current_stats.token_name.pop_back();
+    }
+    if (!current_stats.token_line.original.empty()) {
+        current_stats.token_line.original.pop_back();
+    }
     _nextLine(current_stats);
 
     return current_stats.token_lines;
