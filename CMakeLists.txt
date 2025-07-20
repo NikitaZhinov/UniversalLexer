@@ -22,8 +22,9 @@ endif()
 
 add_library(${PROJECT_NAME} STATIC "include/lexer/lexer.h" "src/lexer.cpp" "include/lexer/token.h" "src/token.cpp")
 
+option(UnivarsalLexer_BUILD_DOCS "Build docs target for UnivarsalLexer project" ON)
 find_package(Doxygen REQUIRED)
-if(DOXYGEN_FOUND)
+if(DOXYGEN_FOUND AND UnivarsalLexer_BUILD_DOCS)
 	message("Doxygen build started")
 	add_custom_target(doxygen ALL
         COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
