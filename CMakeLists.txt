@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.30)
 
-project(Lexer VERSION 1.0 LANGUAGES CXX)
+project(UniversalLexer VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED On)
@@ -22,11 +22,10 @@ endif()
 
 add_library(${PROJECT_NAME} STATIC "include/lexer/lexer.h" "src/lexer.cpp" "include/lexer/token.h" "src/token.cpp")
 
-option(UnivarsalLexer_BUILD_DOCS "Build docs target for UnivarsalLexer project" ON)
 find_package(Doxygen REQUIRED)
-if(DOXYGEN_FOUND AND UnivarsalLexer_BUILD_DOCS)
+if(DOXYGEN_FOUND)
 	message("Doxygen build started")
-	add_custom_target(doxygen ALL
+	add_custom_target(UniversalLexerDoxygen ALL
         COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         VERBATIM)
