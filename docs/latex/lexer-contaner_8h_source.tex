@@ -1,0 +1,73 @@
+\doxysection{lexer-\/contaner.h}
+\hypertarget{lexer-contaner_8h_source}{}\label{lexer-contaner_8h_source}\index{include/lexer/lexer-\/contaner.h@{include/lexer/lexer-\/contaner.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}lexer-\/iterator.h"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{namespace\ }lexer\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8ac07eeb4e9ec71fdf1ef1ea9643c151}{LexerContaner}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ lexer\_contaner\_t\ \_contaner;}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \_size;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_countSize();}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8ac07eeb4e9ec71fdf1ef1ea9643c151}{LexerContaner}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_aaa619aad47105ac594fbf594d956a95c}{LexerContaner}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8ac07eeb4e9ec71fdf1ef1ea9643c151}{LexerContaner}}\&\ other);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a1ab60f1b8898eeeec2922cc1b3930403}{LexerContaner}}(\mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8ac07eeb4e9ec71fdf1ef1ea9643c151}{LexerContaner}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a435252a21c1502c0e7fbe4daca1e50d7}{LexerContaner}}(\textcolor{keyword}{const}\ lexer\_contaner\_t\&\ contaner);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a670fd99d1c2ab653b91d2a36727a6a7b}{LexerContaner}}(lexer\_contaner\_t\&\&\ contaner);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8ac07eeb4e9ec71fdf1ef1ea9643c151}{LexerContaner}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_afecacbbbcd4674d5da30cb2ddab0564e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8ac07eeb4e9ec71fdf1ef1ea9643c151}{LexerContaner}}\&\ other);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8ac07eeb4e9ec71fdf1ef1ea9643c151}{LexerContaner}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a4351350c4af4b6a1c336a8403997628a}{operator=}}(\mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8ac07eeb4e9ec71fdf1ef1ea9643c151}{LexerContaner}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8ac07eeb4e9ec71fdf1ef1ea9643c151}{LexerContaner}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a667cc49f24741f20f20c51b87445da6c}{operator=}}(\textcolor{keyword}{const}\ lexer\_contaner\_t\&\ contaner);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8ac07eeb4e9ec71fdf1ef1ea9643c151}{LexerContaner}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a83c694cd2ab990426aa3fb293627c8e8}{operator=}}(lexer\_contaner\_t\&\&\ contaner)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_iterator}{LexerIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a788c378421d565852e59237205e813ca}{begin}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_const_iterator}{LexerConstIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a53bf3c523dc113d874d44302aea580f5}{begin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_const_iterator}{LexerConstIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a31bc5d6092e0dd5fe033bf7ecbdfcd78}{cbegin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_iterator}{LexerIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_ac1d06a50b3618d99f2c70f2fe44e7dd6}{end}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_const_iterator}{LexerConstIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_ab0dca6d3f540fa06a50cafb9bffc0442}{end}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_const_iterator}{LexerConstIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a7692cc6c30447708c424228dbfd8d777}{cend}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_reverse_iterator}{LexerReverseIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a268c01499d8db712818214f5d45ca9fd}{rbegin}}();}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_const_reverse_iterator}{LexerConstReverseIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a3b7b9885e168d3dd94d96ab2808985a5}{rbegin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_const_reverse_iterator}{LexerConstReverseIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a8b682cdc809f28f4b72aaae365f85adf}{crbegin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_reverse_iterator}{LexerReverseIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a08066eee1edb5c06ed273014cbac8435}{rend}}();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_const_reverse_iterator}{LexerConstReverseIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a90f22b7f3ecb9b366a9d68cc051ad910}{rend}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_const_reverse_iterator}{LexerConstReverseIterator}}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a0536c591c2df245f730fa5a599ef9a00}{crend}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlexer_1_1_token_line}{TokenLine}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_abc92b0c720f086b9132d5f44523c8f6b}{getLine}}(\textcolor{keywordtype}{size\_t}\ i);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structlexer_1_1_token_line}{TokenLine}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a9e945d8d212762bc0116be946873a531}{getLine}}(\textcolor{keywordtype}{size\_t}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlexer_1_1_token_line}{TokenLine}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a21bd3f47397945b9f9b7079919aeb800}{operator[]}}(\textcolor{keywordtype}{size\_t}\ i);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structlexer_1_1_token_line}{TokenLine}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_ac5da502823e2cf39f794293fa6edadc3}{operator[]}}(\textcolor{keywordtype}{size\_t}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a99abbe6ff52189b9740c77dc1a781856}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a1c468a686b6efa72b7c54719854c9d16}{getTokensNumber}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlexer_1_1_lexer_contaner_a0e2085edad3dbe12e3a3d919a450a318}{getLinesNumber}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00223\ \ \ \ \ \};}
+\DoxyCodeLine{00224\ \}\ \ \textcolor{comment}{//\ namespace\ lexer}}
+
+\end{DoxyCode}

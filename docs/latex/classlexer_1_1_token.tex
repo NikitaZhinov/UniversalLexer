@@ -1,0 +1,266 @@
+\doxysection{lexer\+::Token Class Reference}
+\hypertarget{classlexer_1_1_token}{}\label{classlexer_1_1_token}\index{lexer::Token@{lexer::Token}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlexer_1_1_token_a6c523d2ee16c1d158a111a030a534c91}\label{classlexer_1_1_token_a6c523d2ee16c1d158a111a030a534c91} 
+using {\bfseries define\+\_\+id\+\_\+func\+\_\+t} = std\+::function$<$uint64\+\_\+t(const wchar\+\_\+t\texorpdfstring{$\ast$}{*})$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlexer_1_1_token_a72d7d062aaf2b897848a33d64d6b542d}\label{classlexer_1_1_token_a72d7d062aaf2b897848a33d64d6b542d} 
+{\bfseries Token} ()
+\begin{DoxyCompactList}\small\item\em Sets id = 0 and text = "{}"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_token_ae5a81beef3c9ed8a9ef91002b00fe2bb}{Token}} (const std\+::wstring \&text)
+\begin{DoxyCompactList}\small\item\em Sets id = 0 and text. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_token_ad0b14171aca3f5516db500bba2d61647}{Token}} (define\+\_\+id\+\_\+func\+\_\+t define\+Id)
+\begin{DoxyCompactList}\small\item\em Sets id = 0, text = "{}"{} and define\+Id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_token_af128a4f055f4049104229617f2fc0d54}{Token}} (define\+\_\+id\+\_\+func\+\_\+t define\+Id, const std\+::wstring \&text)
+\begin{DoxyCompactList}\small\item\em Sets id = 0, text and define\+Id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_token_aaa5e7f7b089746a93b6db3a02b230b9b}{Token}} (const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_token_abeb8307a941e14f87447d1414eb5e889}{Token}} (\mbox{\hyperlink{classlexer_1_1_token}{Token}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_token_a1aa44c6675aa323e244e87492eb8dc08}{set\+Text}} (const std\+::wstring \&new\+\_\+text)
+\begin{DoxyCompactList}\small\item\em Sets a token text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_token_a780ea963cd94eff8c046f4867a28f4f9}{set\+Text}} (std\+::wstring \&\&new\+\_\+text) noexcept
+\begin{DoxyCompactList}\small\item\em Sets a token text. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classlexer_1_1_token_a0ba880c9b9fd7dbf1fbf6737d7c5e3e8}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Return token id. \end{DoxyCompactList}\item 
+std\+::wstring \mbox{\hyperlink{classlexer_1_1_token_a94654fed2d1854012d7ea0b9574a5a3d}{get\+Text}} () const
+\begin{DoxyCompactList}\small\item\em Return token text. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_token}{Token}} \& \mbox{\hyperlink{classlexer_1_1_token_a7e7a2a51be3030dfca1f527e9f12d209}{operator=}} (const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&right)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_token}{Token}} \& \mbox{\hyperlink{classlexer_1_1_token_a2a8c12bd535c1f127e04a8a5a17ef59e}{operator=}} (\mbox{\hyperlink{classlexer_1_1_token}{Token}} \&\&right) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classlexer_1_1_token_a2f9ac044b605d23a98ae473993b15f22}{operator==}} (const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&left, const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&right)
+\begin{DoxyCompactList}\small\item\em Compares the text of the tokens. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlexer_1_1_token_a6f52a7ce33f63dc1b326c6c5863bb670}{operator!=}} (const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&left, const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&right)
+\begin{DoxyCompactList}\small\item\em Compares the text of the tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classlexer_1_1_token_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlexer_1_1_token_ae5a81beef3c9ed8a9ef91002b00fe2bb}\index{lexer::Token@{lexer::Token}!Token@{Token}}
+\index{Token@{Token}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{Token()}{Token()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_ae5a81beef3c9ed8a9ef91002b00fe2bb} 
+lexer\+::\+Token\+::\+Token (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Sets id = 0 and text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & -\/ a token text. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_token_ad0b14171aca3f5516db500bba2d61647}\index{lexer::Token@{lexer::Token}!Token@{Token}}
+\index{Token@{Token}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{Token()}{Token()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_ad0b14171aca3f5516db500bba2d61647} 
+lexer\+::\+Token\+::\+Token (\begin{DoxyParamCaption}\item[{define\+\_\+id\+\_\+func\+\_\+t}]{define\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Sets id = 0, text = "{}"{} and define\+Id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em define\+Id} & -\/ a function for identifying tokens. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_token_af128a4f055f4049104229617f2fc0d54}\index{lexer::Token@{lexer::Token}!Token@{Token}}
+\index{Token@{Token}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{Token()}{Token()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_af128a4f055f4049104229617f2fc0d54} 
+lexer\+::\+Token\+::\+Token (\begin{DoxyParamCaption}\item[{define\+\_\+id\+\_\+func\+\_\+t}]{define\+Id}{, }\item[{const std\+::wstring \&}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Sets id = 0, text and define\+Id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em define\+Id} & -\/ a function for identifying tokens. \\
+\hline
+{\em text} & -\/ a token text. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_token_aaa5e7f7b089746a93b6db3a02b230b9b}\index{lexer::Token@{lexer::Token}!Token@{Token}}
+\index{Token@{Token}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{Token()}{Token()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_aaa5e7f7b089746a93b6db3a02b230b9b} 
+lexer\+::\+Token\+::\+Token (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ another token. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_token_abeb8307a941e14f87447d1414eb5e889}\index{lexer::Token@{lexer::Token}!Token@{Token}}
+\index{Token@{Token}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{Token()}{Token()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_abeb8307a941e14f87447d1414eb5e889} 
+lexer\+::\+Token\+::\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlexer_1_1_token}{Token}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ another token. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classlexer_1_1_token_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlexer_1_1_token_a0ba880c9b9fd7dbf1fbf6737d7c5e3e8}\index{lexer::Token@{lexer::Token}!getId@{getId}}
+\index{getId@{getId}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_a0ba880c9b9fd7dbf1fbf6737d7c5e3e8} 
+uint64\+\_\+t lexer\+::\+Token\+::get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return token id. 
+
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_token_a94654fed2d1854012d7ea0b9574a5a3d}\index{lexer::Token@{lexer::Token}!getText@{getText}}
+\index{getText@{getText}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_a94654fed2d1854012d7ea0b9574a5a3d} 
+std\+::wstring lexer\+::\+Token\+::get\+Text (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return token text. 
+
+\begin{DoxyReturn}{Returns}
+std\+::wstring 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_token_a7e7a2a51be3030dfca1f527e9f12d209}\index{lexer::Token@{lexer::Token}!operator=@{operator=}}
+\index{operator=@{operator=}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_a7e7a2a51be3030dfca1f527e9f12d209} 
+\mbox{\hyperlink{classlexer_1_1_token}{Token}} \& lexer\+::\+Token\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & -\/ another token. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_token_a2a8c12bd535c1f127e04a8a5a17ef59e}\index{lexer::Token@{lexer::Token}!operator=@{operator=}}
+\index{operator=@{operator=}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_a2a8c12bd535c1f127e04a8a5a17ef59e} 
+\mbox{\hyperlink{classlexer_1_1_token}{Token}} \& lexer\+::\+Token\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlexer_1_1_token}{Token}} \&\&}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & -\/ another token. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_token_a1aa44c6675aa323e244e87492eb8dc08}\index{lexer::Token@{lexer::Token}!setText@{setText}}
+\index{setText@{setText}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_a1aa44c6675aa323e244e87492eb8dc08} 
+void lexer\+::\+Token\+::set\+Text (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{new\+\_\+text}{}\end{DoxyParamCaption})}
+
+
+
+Sets a token text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+text} & -\/ a new token text. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_token_a780ea963cd94eff8c046f4867a28f4f9}\index{lexer::Token@{lexer::Token}!setText@{setText}}
+\index{setText@{setText}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_a780ea963cd94eff8c046f4867a28f4f9} 
+void lexer\+::\+Token\+::set\+Text (\begin{DoxyParamCaption}\item[{std\+::wstring \&\&}]{new\+\_\+text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Sets a token text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+text} & -\/ a new token text. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-related-members}
+\Hypertarget{classlexer_1_1_token_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classlexer_1_1_token_a6f52a7ce33f63dc1b326c6c5863bb670}\index{lexer::Token@{lexer::Token}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_a6f52a7ce33f63dc1b326c6c5863bb670} 
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&}]{left}{, }\item[{const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares the text of the tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & -\/ left token. \\
+\hline
+{\em right} & -\/ right token.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_token_a2f9ac044b605d23a98ae473993b15f22}\index{lexer::Token@{lexer::Token}!operator==@{operator==}}
+\index{operator==@{operator==}!lexer::Token@{lexer::Token}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{classlexer_1_1_token_a2f9ac044b605d23a98ae473993b15f22} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&}]{left}{, }\item[{const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \&}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares the text of the tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & -\/ left token. \\
+\hline
+{\em right} & -\/ right token.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/lexer/token.\+h\end{DoxyCompactItemize}

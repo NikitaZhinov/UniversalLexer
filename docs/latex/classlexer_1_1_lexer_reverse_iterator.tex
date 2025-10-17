@@ -1,0 +1,115 @@
+\doxysection{lexer\+::Lexer\+Reverse\+Iterator Class Reference}
+\hypertarget{classlexer_1_1_lexer_reverse_iterator}{}\label{classlexer_1_1_lexer_reverse_iterator}\index{lexer::LexerReverseIterator@{lexer::LexerReverseIterator}}
+
+
+A reverse iterator that points to a specific token in the contaner.  
+
+
+
+
+{\ttfamily \#include $<$lexer-\/iterator.\+h$>$}
+
+Inheritance diagram for lexer\+::Lexer\+Reverse\+Iterator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.423126cm]{classlexer_1_1_lexer_reverse_iterator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_reverse_iterator_a61555aee5e3e85cc6dd094e46e35fd0b}{Lexer\+Reverse\+Iterator}} (contaner \&c)
+\begin{DoxyCompactList}\small\item\em A constructor that initializes fields within the constructor. Sets the pointers to the last element in the container. \end{DoxyCompactList}\item 
+token\+\_\+it\+\_\+t \mbox{\hyperlink{classlexer_1_1_lexer_reverse_iterator_a28a6cffaf8a643650d04c1a83da2dbcd}{get\+Begin}} () override
+\begin{DoxyCompactList}\small\item\em Returns an iterator to the first element of the current row. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator$<$ lexer\+\_\+contaner\+\_\+t\+::reverse\+\_\+iterator, Token\+Line\+::token\+\_\+contaner\+\_\+t\+::reverse\+\_\+iterator, Lexer\+Reverse\+Iterator $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{Lexer\+Template\+Iterator}} (const line\+\_\+it\+\_\+t \&start\+\_\+line, const line\+\_\+it\+\_\+t \&end\+\_\+line, const token\+\_\+it\+\_\+t \&start\+\_\+token)
+\begin{DoxyCompactList}\small\item\em A constructor that initializes all the fields of an iterator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \& \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a4f481a6272a41f4906d1dd9f249f93b1}{operator=}} (const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \& \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a6175eaf27e053a2d4f155adf75992a1c}{operator\texorpdfstring{$\ast$}{*}}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current token. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a5c830639a4633ffeebdf0d8ba11e8cff}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the current token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a22d90ffa1722441c6b22cf73b932a132}{get\+Line}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current row. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_token}{Token}} \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a12edf2c81bf4c0cd16409c4186d4c910}{get\+Token}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Types inherited from \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator$<$ lexer\+\_\+contaner\+\_\+t\+::reverse\+\_\+iterator, Token\+Line\+::token\+\_\+contaner\+\_\+t\+::reverse\+\_\+iterator, Lexer\+Reverse\+Iterator $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries contaner}
+\item 
+using {\bfseries line\+\_\+it\+\_\+t}
+\item 
+using {\bfseries token\+\_\+it\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator$<$ lexer\+\_\+contaner\+\_\+t\+::reverse\+\_\+iterator, Token\+Line\+::token\+\_\+contaner\+\_\+t\+::reverse\+\_\+iterator, Lexer\+Reverse\+Iterator $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a5da415b5b77737cf4f9da217ca391b10}{exception\+Out\+Of\+Range}} ()
+\begin{DoxyCompactList}\small\item\em Causes an exception related to going beyond the container that stores the tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator$<$ lexer\+\_\+contaner\+\_\+t\+::reverse\+\_\+iterator, Token\+Line\+::token\+\_\+contaner\+\_\+t\+::reverse\+\_\+iterator, Lexer\+Reverse\+Iterator $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+line\+\_\+it\+\_\+t {\bfseries \+\_\+current\+\_\+line}
+\item 
+token\+\_\+it\+\_\+t {\bfseries \+\_\+current\+\_\+token}
+\item 
+line\+\_\+it\+\_\+t {\bfseries \+\_\+start\+\_\+line}
+\item 
+line\+\_\+it\+\_\+t {\bfseries \+\_\+end\+\_\+line}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A reverse iterator that points to a specific token in the contaner. 
+
+\label{doc-constructors}
+\Hypertarget{classlexer_1_1_lexer_reverse_iterator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlexer_1_1_lexer_reverse_iterator_a61555aee5e3e85cc6dd094e46e35fd0b}\index{lexer::LexerReverseIterator@{lexer::LexerReverseIterator}!LexerReverseIterator@{LexerReverseIterator}}
+\index{LexerReverseIterator@{LexerReverseIterator}!lexer::LexerReverseIterator@{lexer::LexerReverseIterator}}
+\doxysubsubsection{\texorpdfstring{LexerReverseIterator()}{LexerReverseIterator()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_reverse_iterator_a61555aee5e3e85cc6dd094e46e35fd0b} 
+lexer\+::\+Lexer\+Reverse\+Iterator\+::\+Lexer\+Reverse\+Iterator (\begin{DoxyParamCaption}\item[{contaner \&}]{c}{}\end{DoxyParamCaption})}
+
+
+
+A constructor that initializes fields within the constructor. Sets the pointers to the last element in the container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ contaner. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classlexer_1_1_lexer_reverse_iterator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlexer_1_1_lexer_reverse_iterator_a28a6cffaf8a643650d04c1a83da2dbcd}\index{lexer::LexerReverseIterator@{lexer::LexerReverseIterator}!getBegin@{getBegin}}
+\index{getBegin@{getBegin}!lexer::LexerReverseIterator@{lexer::LexerReverseIterator}}
+\doxysubsubsection{\texorpdfstring{getBegin()}{getBegin()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_reverse_iterator_a28a6cffaf8a643650d04c1a83da2dbcd} 
+token\+\_\+it\+\_\+t lexer\+::\+Lexer\+Reverse\+Iterator\+::get\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns an iterator to the first element of the current row. 
+
+\begin{DoxyReturn}{Returns}
+token\+\_\+it\+\_\+t 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aaddb1d9489d9350fd889e4c8f0aac158}{lexer\+::\+Lexer\+Template\+Iterator$<$ lexer\+\_\+contaner\+\_\+t\+::reverse\+\_\+iterator, Token\+Line\+::token\+\_\+contaner\+\_\+t\+::reverse\+\_\+iterator, Lexer\+Reverse\+Iterator $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/lexer/lexer-\/iterator.\+h\end{DoxyCompactItemize}

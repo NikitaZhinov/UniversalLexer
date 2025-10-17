@@ -2,6 +2,7 @@
 
 #include <string>
 #include <functional>
+#include <vector>
 
 namespace lexer {
     /**
@@ -10,14 +11,14 @@ namespace lexer {
      *
      * @param token - the text of the token.
      *
-     * @return std::uint64_t
+     * @return uint64_t
      */
     template <class INT = uint64_t> constexpr INT defineTokenId(const wchar_t* token) {
         INT hash = 0xcbf29ce484222325;
         if constexpr (sizeof(INT) == 4) {
             hash = 0x811c9dc5;
         }
-        for (std::size_t i = 0; token[i] != L'\0'; ++i) {
+        for (size_t i = 0; token[i] != L'\0'; ++i) {
             hash ^= static_cast<INT>(token[i]);
             if constexpr (sizeof(INT) == 4) {
                 hash *= 0x01000193;
@@ -30,10 +31,10 @@ namespace lexer {
 
     class Token {
     public:
-        using define_id_func_t = std::function<std::uint64_t(const wchar_t*)>;
+        using define_id_func_t = std::function<uint64_t(const wchar_t*)>;
 
     private:
-        std::uint64_t _id;
+        uint64_t _id;
 
         std::wstring _text;
 
@@ -100,9 +101,9 @@ namespace lexer {
         /**
          * @brief Return token id.
          *
-         * @return std::uint64_t
+         * @return uint64_t
          */
-        std::uint64_t getId() const;
+        uint64_t getId() const;
 
         /**
          * @brief Return token text.
@@ -152,10 +153,12 @@ namespace lexer {
      * stored.
      */
     struct TokenLine {
+        using token_contaner_t = std::vector<Token>;
+
         /**
          * @brief The row number.
          */
-        std::size_t line_number;
+        size_t line_number;
 
         /**
          * @brief The original row.
@@ -165,7 +168,7 @@ namespace lexer {
         /**
          * @brief List of tokens.
          */
-        std::vector<Token> tokens;
+        token_contaner_t tokens;
 
         /**
          * @brief Sets line_number = 0.
@@ -179,8 +182,8 @@ namespace lexer {
          * @param original - a original row.
          * @param tokens - a list of tokens.
          */
-        TokenLine(std::size_t line_number, const std::wstring& original,
-                  const std::vector<Token>& tokens);
+        TokenLine(size_t line_number, const std::wstring& original,
+                  const token_contaner_t& tokens);
 
         /**
          * @brief Copy constructor.

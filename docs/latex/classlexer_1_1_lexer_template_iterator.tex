@@ -1,0 +1,488 @@
+\doxysection{lexer\+::Lexer\+Template\+Iterator\texorpdfstring{$<$}{<} Line\+Iterator, Token\+Iterator, Iterator \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classlexer_1_1_lexer_template_iterator}{}\label{classlexer_1_1_lexer_template_iterator}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+
+
+A template parent class for all types of iterators.  
+
+
+
+
+{\ttfamily \#include $<$lexer-\/iterator.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{Lexer\+Template\+Iterator}} (const line\+\_\+it\+\_\+t \&start\+\_\+line, const line\+\_\+it\+\_\+t \&end\+\_\+line, const token\+\_\+it\+\_\+t \&start\+\_\+token)
+\begin{DoxyCompactList}\small\item\em A constructor that initializes all the fields of an iterator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a17d451be65a1d8bad69ce911514a0955}{Lexer\+Template\+Iterator}} (const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_abc4a6fd6d6ec3c90aec245c7d2abe16f}{Lexer\+Template\+Iterator}} (\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \& \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a4f481a6272a41f4906d1dd9f249f93b1}{operator=}} (const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \& \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a165c48b8eea3b134cff432fb71b9b893}{operator=}} (\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \& \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a6175eaf27e053a2d4f155adf75992a1c}{operator\texorpdfstring{$\ast$}{*}}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current token. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a5c830639a4633ffeebdf0d8ba11e8cff}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the current token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a22d90ffa1722441c6b22cf73b932a132}{get\+Line}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current row. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_token}{Token}} \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a12edf2c81bf4c0cd16409c4186d4c910}{get\+Token}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a5a590c968de1bd9e97ffd1216824d666}\label{classlexer_1_1_lexer_template_iterator_a5a590c968de1bd9e97ffd1216824d666} 
+using {\bfseries contaner} = lexer\+\_\+contaner\+\_\+t
+\item 
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a17ffcfd9d0883912e89e2b6e1f0db2ef}\label{classlexer_1_1_lexer_template_iterator_a17ffcfd9d0883912e89e2b6e1f0db2ef} 
+using {\bfseries line\+\_\+it\+\_\+t} = Line\+Iterator
+\item 
+\Hypertarget{classlexer_1_1_lexer_template_iterator_aa790598b2e6c7b221acf3a5425c1e724}\label{classlexer_1_1_lexer_template_iterator_aa790598b2e6c7b221acf3a5425c1e724} 
+using {\bfseries token\+\_\+it\+\_\+t} = Token\+Iterator
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual token\+\_\+it\+\_\+t \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aaddb1d9489d9350fd889e4c8f0aac158}{get\+Begin}} ()=0
+\begin{DoxyCompactList}\small\item\em Returns an iterator to the first element of the current row. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a5da415b5b77737cf4f9da217ca391b10}{exception\+Out\+Of\+Range}} ()
+\begin{DoxyCompactList}\small\item\em Causes an exception related to going beyond the container that stores the tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a61a759bb0869d25602252ab80eeecf70}\label{classlexer_1_1_lexer_template_iterator_a61a759bb0869d25602252ab80eeecf70} 
+line\+\_\+it\+\_\+t {\bfseries \+\_\+current\+\_\+line}
+\item 
+\Hypertarget{classlexer_1_1_lexer_template_iterator_ad658e641720ee06517c3de82ff0d404e}\label{classlexer_1_1_lexer_template_iterator_ad658e641720ee06517c3de82ff0d404e} 
+token\+\_\+it\+\_\+t {\bfseries \+\_\+current\+\_\+token}
+\item 
+\Hypertarget{classlexer_1_1_lexer_template_iterator_ad52eb046014d8ae43308e0e257489ba8}\label{classlexer_1_1_lexer_template_iterator_ad52eb046014d8ae43308e0e257489ba8} 
+line\+\_\+it\+\_\+t {\bfseries \+\_\+start\+\_\+line}
+\item 
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a8e52ce35f8430cf55b1eea46aeb3470e}\label{classlexer_1_1_lexer_template_iterator_a8e52ce35f8430cf55b1eea46aeb3470e} 
+line\+\_\+it\+\_\+t {\bfseries \+\_\+end\+\_\+line}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+Iterator \& \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_ae7dad2a5bb49e72bfe7a1a26a97cdb61}{operator++}} (Iterator \&it)
+\begin{DoxyCompactList}\small\item\em Moves on to the next token. \end{DoxyCompactList}\item 
+Iterator \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_ab203268af2ca87e25c19746956c0cdb3}{operator++}} (Iterator \&it, int)
+\begin{DoxyCompactList}\small\item\em Moves on to the next token. \end{DoxyCompactList}\item 
+Iterator \& \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a4b95eb7137a733db82afa65bf0bd243d}{operator-\/-\/}} (Iterator \&it)
+\begin{DoxyCompactList}\small\item\em Goes to the previous token. \end{DoxyCompactList}\item 
+Iterator \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_abdb1c197cb896a8c4ee8803598685bbb}{operator-\/-\/}} (Iterator \&it, int)
+\begin{DoxyCompactList}\small\item\em Goes to the previous token. \end{DoxyCompactList}\item 
+Iterator \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_abbb9db2d59d2edb06e1ba2db51b15b27}{operator+}} (const Iterator \&start, size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Moves a certain number of tokens forward. \end{DoxyCompactList}\item 
+Iterator \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa19191000a6285c591d68a96b3ede4c0}{operator-\/}} (const Iterator \&start, size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Moves a certain number of tokens back. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a174b60e4cff9f3938d911da7de035c2d}{operator==}} (const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \&l, const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \&r)
+\begin{DoxyCompactList}\small\item\em Compares two iterators. Returns "{}true"{} if both iterators point to the same token. Else returns "{}false"{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a9aa77b012b313f140782a9d11e887893}{operator!=}} (const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \&l, const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \&r)
+\begin{DoxyCompactList}\small\item\em Compares two iterators. Returns "{}true"{} if the iterators point to different tokens. Else returns "{}false"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$\newline
+class lexer\+::\+Lexer\+Template\+Iterator$<$ Line\+Iterator, Token\+Iterator, Iterator $>$}
+A template parent class for all types of iterators. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Line\+Iterator} & -\/ an iterator that is used to track the current line. \\
+\hline
+{\em Token\+Iterator} & -\/ an iterator that is used to track the current token. \\
+\hline
+{\em Iterator} & -\/ child class. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!LexerTemplateIterator@{LexerTemplateIterator}}
+\index{LexerTemplateIterator@{LexerTemplateIterator}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{LexerTemplateIterator()}{LexerTemplateIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::\+Lexer\+Template\+Iterator (\begin{DoxyParamCaption}\item[{const line\+\_\+it\+\_\+t \&}]{start\+\_\+line}{, }\item[{const line\+\_\+it\+\_\+t \&}]{end\+\_\+line}{, }\item[{const token\+\_\+it\+\_\+t \&}]{start\+\_\+token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A constructor that initializes all the fields of an iterator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+line} & -\/ an iterator that points to the first row of the container. \\
+\hline
+{\em end\+\_\+line} & -\/ an iterator that points to a field after the last row of a container. \\
+\hline
+{\em start\+\_\+token} & -\/ an iterator that points to the first token of the first row of the container. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a17d451be65a1d8bad69ce911514a0955}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!LexerTemplateIterator@{LexerTemplateIterator}}
+\index{LexerTemplateIterator@{LexerTemplateIterator}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{LexerTemplateIterator()}{LexerTemplateIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a17d451be65a1d8bad69ce911514a0955} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::\+Lexer\+Template\+Iterator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ another iterator. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_abc4a6fd6d6ec3c90aec245c7d2abe16f}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!LexerTemplateIterator@{LexerTemplateIterator}}
+\index{LexerTemplateIterator@{LexerTemplateIterator}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{LexerTemplateIterator()}{LexerTemplateIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_abc4a6fd6d6ec3c90aec245c7d2abe16f} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::\+Lexer\+Template\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ another iterator. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a5da415b5b77737cf4f9da217ca391b10}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!exceptionOutOfRange@{exceptionOutOfRange}}
+\index{exceptionOutOfRange@{exceptionOutOfRange}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{exceptionOutOfRange()}{exceptionOutOfRange()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a5da415b5b77737cf4f9da217ca391b10} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+void \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::exception\+Out\+Of\+Range (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Causes an exception related to going beyond the container that stores the tokens. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_aaddb1d9489d9350fd889e4c8f0aac158}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!getBegin@{getBegin}}
+\index{getBegin@{getBegin}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{getBegin()}{getBegin()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_aaddb1d9489d9350fd889e4c8f0aac158} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+virtual token\+\_\+it\+\_\+t \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::get\+Begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Returns an iterator to the first element of the current row. 
+
+\begin{DoxyReturn}{Returns}
+token\+\_\+it\+\_\+t 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlexer_1_1_lexer_const_iterator_ab2c6feea6caf63f8874ffdf5bfcd322d}{lexer\+::\+Lexer\+Const\+Iterator}}, \mbox{\hyperlink{classlexer_1_1_lexer_const_reverse_iterator_a72c9d5657a47a719d175f8e65d168e6a}{lexer\+::\+Lexer\+Const\+Reverse\+Iterator}}, \mbox{\hyperlink{classlexer_1_1_lexer_iterator_a79855da5b5de6db740209ad81d816f20}{lexer\+::\+Lexer\+Iterator}}, and \mbox{\hyperlink{classlexer_1_1_lexer_reverse_iterator_a28a6cffaf8a643650d04c1a83da2dbcd}{lexer\+::\+Lexer\+Reverse\+Iterator}}.
+
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a22d90ffa1722441c6b22cf73b932a132}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!getLine@{getLine}}
+\index{getLine@{getLine}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{getLine()}{getLine()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a22d90ffa1722441c6b22cf73b932a132} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::get\+Line (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the current row. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structlexer_1_1_token_line}{Token\+Line} 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a12edf2c81bf4c0cd16409c4186d4c910}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!getToken@{getToken}}
+\index{getToken@{getToken}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{getToken()}{getToken()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a12edf2c81bf4c0cd16409c4186d4c910} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+\mbox{\hyperlink{classlexer_1_1_token}{Token}} \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::get\+Token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the current token. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classlexer_1_1_token}{Token} 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a6175eaf27e053a2d4f155adf75992a1c}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a6175eaf27e053a2d4f155adf75992a1c} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \& \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the current token. 
+
+\begin{DoxyReturn}{Returns}
+const \doxylink{classlexer_1_1_token}{Token}\& 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a5c830639a4633ffeebdf0d8ba11e8cff}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a5c830639a4633ffeebdf0d8ba11e8cff} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+const \mbox{\hyperlink{classlexer_1_1_token}{Token}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a pointer to the current token. 
+
+\begin{DoxyReturn}{Returns}
+const Token\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a4f481a6272a41f4906d1dd9f249f93b1}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a4f481a6272a41f4906d1dd9f249f93b1} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \& \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ another iterator. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a165c48b8eea3b134cff432fb71b9b893}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a165c48b8eea3b134cff432fb71b9b893} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}} \& \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{lexer\+::\+Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Move operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ another iterator. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-related-members}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a9aa77b012b313f140782a9d11e887893}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a9aa77b012b313f140782a9d11e887893} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$ \&}]{l}{, }\item[{const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$ \&}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares two iterators. Returns "{}true"{} if the iterators point to different tokens. Else returns "{}false"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ first iterator. \\
+\hline
+{\em r} & -\/ second iterator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_abbb9db2d59d2edb06e1ba2db51b15b27}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_abbb9db2d59d2edb06e1ba2db51b15b27} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+Iterator operator+ (\begin{DoxyParamCaption}\item[{const Iterator \&}]{start}{, }\item[{size\+\_\+t}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Moves a certain number of tokens forward. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & -\/ the initial iterator. \\
+\hline
+{\em n} & -\/ the number of movements.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Iterator\& 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_ae7dad2a5bb49e72bfe7a1a26a97cdb61}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator++}{operator++}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_ae7dad2a5bb49e72bfe7a1a26a97cdb61} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+Iterator \& operator++ (\begin{DoxyParamCaption}\item[{Iterator \&}]{it}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Moves on to the next token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & -\/ movable iterator.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Iterator\& 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_ab203268af2ca87e25c19746956c0cdb3}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator++}{operator++}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_ab203268af2ca87e25c19746956c0cdb3} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+Iterator operator++ (\begin{DoxyParamCaption}\item[{Iterator \&}]{it}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Moves on to the next token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & -\/ movable iterator.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Iterator\& 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_aa19191000a6285c591d68a96b3ede4c0}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_aa19191000a6285c591d68a96b3ede4c0} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+Iterator operator-\/ (\begin{DoxyParamCaption}\item[{const Iterator \&}]{start}{, }\item[{size\+\_\+t}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Moves a certain number of tokens back. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & -\/ the initial iterator. \\
+\hline
+{\em n} & -\/ the number of movements.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Iterator\& 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a4b95eb7137a733db82afa65bf0bd243d}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/}{operator--}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a4b95eb7137a733db82afa65bf0bd243d} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+Iterator \& operator-\/-\/ (\begin{DoxyParamCaption}\item[{Iterator \&}]{it}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Goes to the previous token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & -\/ movable iterator.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Iterator\& 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_abdb1c197cb896a8c4ee8803598685bbb}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/}{operator--}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_abdb1c197cb896a8c4ee8803598685bbb} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+Iterator operator-\/-\/ (\begin{DoxyParamCaption}\item[{Iterator \&}]{it}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Goes to the previous token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & -\/ movable iterator.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Iterator\& 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_template_iterator_a174b60e4cff9f3938d911da7de035c2d}\index{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$@{lexer::LexerTemplateIterator$<$ LineIterator, TokenIterator, Iterator $>$}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_template_iterator_a174b60e4cff9f3938d911da7de035c2d} 
+template$<$class Line\+Iterator, class Token\+Iterator, class Iterator$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$ \&}]{l}{, }\item[{const \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator}{Lexer\+Template\+Iterator}}$<$ Line\+Iterator, Token\+Iterator, Iterator $>$ \&}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares two iterators. Returns "{}true"{} if both iterators point to the same token. Else returns "{}false"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ first iterator. \\
+\hline
+{\em r} & -\/ second iterator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/lexer/lexer-\/iterator.\+h\end{DoxyCompactItemize}

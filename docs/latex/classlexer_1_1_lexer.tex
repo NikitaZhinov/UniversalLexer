@@ -1,0 +1,413 @@
+\doxysection{lexer\+::Lexer Class Reference}
+\hypertarget{classlexer_1_1_lexer}{}\label{classlexer_1_1_lexer}\index{lexer::Lexer@{lexer::Lexer}}
+
+
+It is used to divide the contents of a file into tokens.  
+
+
+
+
+{\ttfamily \#include $<$lexer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f}{Lexer}} (const std\+::vector$<$ std\+::wstring $>$ \&special\+\_\+alphabets, const std\+::wstring \&individual\+\_\+chars, const std\+::vector$<$ \mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} $>$ \&combining\+\_\+tokens, const std\+::wstring \&separators, Token\+::define\+\_\+id\+\_\+func\+\_\+t define\+Token\+Id\+Func=lexer\+::define\+Token\+Id$<$ uint64\+\_\+t $>$)
+\begin{DoxyCompactList}\small\item\em Sets the necessary parameters for operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_acc0ad9dc5dd5321aa52f43d1fcb936e7}{Lexer}} (const \mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_a12ad771b6cb15340a1e1f033208d9204}{Lexer}} (\mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \& \mbox{\hyperlink{classlexer_1_1_lexer_afed92926be884d1dff43a6004cd61b4d}{operator=}} (const \mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \&right)
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \& \mbox{\hyperlink{classlexer_1_1_lexer_a194de87903b6b28037bc3777a9f6043d}{operator=}} (\mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \&\&right) noexcept
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_abb0656ffa79927436f31aa836b12b983}{set\+Special\+Alphabets}} (const std\+::vector$<$ std\+::wstring $>$ \&new\+\_\+special\+\_\+alphabets)
+\begin{DoxyCompactList}\small\item\em Sets new special alphabets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_a79794c282a4e6fbb677f3587ea815521}{add\+Special\+Alphabet}} (const std\+::wstring \&new\+\_\+special\+\_\+alphabet)
+\begin{DoxyCompactList}\small\item\em Adds new special alphabet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_aa80830a74fd38d91e07e0a4752b5fc7e}{set\+Special\+Alphabets}} (std\+::vector$<$ std\+::wstring $>$ \&\&new\+\_\+special\+\_\+alphabets) noexcept
+\begin{DoxyCompactList}\small\item\em Sets new special alphabets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_a00f21b7472d67af9b66ef3f7e7fd56d6}{add\+Special\+Alphabet}} (std\+::wstring \&\&new\+\_\+special\+\_\+alphabet) noexcept
+\begin{DoxyCompactList}\small\item\em Adds new special alphabet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_a0fbc5122c51d3aa8a172d808f634aa13}{set\+Individual\+Chars}} (const std\+::wstring \&new\+\_\+individual\+\_\+chars)
+\begin{DoxyCompactList}\small\item\em Sets new individual chars. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_a3a399745640820ffe196a547112c4fb1}{add\+Individual\+Char}} (const wchar\+\_\+t \&new\+\_\+individual\+\_\+char)
+\begin{DoxyCompactList}\small\item\em Adds new individual char. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_ad70b17fbe94105d863b85a9e341806cf}{set\+Individual\+Chars}} (std\+::wstring \&\&new\+\_\+individual\+\_\+chars) noexcept
+\begin{DoxyCompactList}\small\item\em Sets new individual chars. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_ad5dfecf51bca0565faa07fb91b107846}{add\+Individual\+Char}} (wchar\+\_\+t \&\&new\+\_\+individual\+\_\+char) noexcept
+\begin{DoxyCompactList}\small\item\em Adds new individual char. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_a9b9763fec8d17286e3acbde3df74537e}{set\+Combining\+Tokens}} (const std\+::vector$<$ \mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} $>$ \&new\+\_\+combining\+\_\+tokens)
+\begin{DoxyCompactList}\small\item\em Sets combining tokens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_ad7ea041c593c43e83910b23d5df65c7d}{add\+Combining\+Token}} (const \mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} \&new\+\_\+combining\+\_\+token)
+\begin{DoxyCompactList}\small\item\em Adds combining tokens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_a1280031106788b0c0d69450f5b814fb1}{set\+Combining\+Tokens}} (std\+::vector$<$ \mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} $>$ \&\&new\+\_\+combining\+\_\+tokens) noexcept
+\begin{DoxyCompactList}\small\item\em Sets combining tokens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlexer_1_1_lexer_a079d688838e77f7d0f64142e070d8bf3}{add\+Combining\+Token}} (\mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} \&\&new\+\_\+combining\+\_\+token) noexcept
+\begin{DoxyCompactList}\small\item\em Adds combining tokens. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::wstring $>$ \mbox{\hyperlink{classlexer_1_1_lexer_a2677256a1a5a2ff3caa4bea22c55bed9}{get\+Special\+Alphabets}} () const
+\begin{DoxyCompactList}\small\item\em Returns a special alphabets. \end{DoxyCompactList}\item 
+std\+::wstring \mbox{\hyperlink{classlexer_1_1_lexer_acf9b22fae1a44886b420c0378f004fc4}{get\+Individual\+Chars}} () const
+\begin{DoxyCompactList}\small\item\em Returns a individual chars. \end{DoxyCompactList}\item 
+\Hypertarget{classlexer_1_1_lexer_ae7c4dce398a7278308acfc9dd313b8c2}\label{classlexer_1_1_lexer_ae7c4dce398a7278308acfc9dd313b8c2} 
+std\+::vector$<$ \mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} $>$ {\bfseries get\+Combining\+Tokens} () const
+\begin{DoxyCompactList}\small\item\em Return a combining tokens. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_contaner}{Lexer\+Contaner}} \mbox{\hyperlink{classlexer_1_1_lexer_abeef96cf47a71966ec650f28b804adad}{create\+Tokens}} (const char \texorpdfstring{$\ast$}{*}file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Opens the file and starts lexical analysis of the file contents. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_contaner}{Lexer\+Contaner}} \mbox{\hyperlink{classlexer_1_1_lexer_a8b72314a862dc3d6be379833b83972c5}{create\+Tokens}} (std\+::wifstream \&file)
+\begin{DoxyCompactList}\small\item\em Starts lexical analysis of the file contents. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlexer_1_1_lexer_contaner}{Lexer\+Contaner}} \mbox{\hyperlink{classlexer_1_1_lexer_a8b8cd17dc2e40d59f58f39680917a58f}{create\+Tokens}} (const std\+::wstring \&str)
+\begin{DoxyCompactList}\small\item\em Starts lexical analysis of the string contents. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+It is used to divide the contents of a file into tokens. 
+
+\label{doc-constructors}
+\Hypertarget{classlexer_1_1_lexer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f}\index{lexer::Lexer@{lexer::Lexer}!Lexer@{Lexer}}
+\index{Lexer@{Lexer}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{Lexer()}{Lexer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f} 
+lexer\+::\+Lexer\+::\+Lexer (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::wstring $>$ \&}]{special\+\_\+alphabets}{, }\item[{const std\+::wstring \&}]{individual\+\_\+chars}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} $>$ \&}]{combining\+\_\+tokens}{, }\item[{const std\+::wstring \&}]{separators}{, }\item[{Token\+::define\+\_\+id\+\_\+func\+\_\+t}]{define\+Token\+Id\+Func}{ = {\ttfamily lexer\+:\+:defineTokenId$<$~uint64\+\_\+t~$>$}}\end{DoxyParamCaption})}
+
+
+
+Sets the necessary parameters for operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em special\+\_\+alphabets} & -\/ a list of alphabets. \\
+\hline
+{\em individual\+\_\+chars} & -\/ a list of characters, each of which is regarded as a separate alphabet. \\
+\hline
+{\em combining\+\_\+tokens} & -\/ tokens between which all symbols are considered as a single token. \\
+\hline
+{\em separators} & -\/ symbols used to separate words. \\
+\hline
+{\em define\+Token\+Id\+Func} & -\/ a function for identifying tokens (calculates the hash of the token by default). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_acc0ad9dc5dd5321aa52f43d1fcb936e7}\index{lexer::Lexer@{lexer::Lexer}!Lexer@{Lexer}}
+\index{Lexer@{Lexer}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{Lexer()}{Lexer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_acc0ad9dc5dd5321aa52f43d1fcb936e7} 
+lexer\+::\+Lexer\+::\+Lexer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ another lexer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_a12ad771b6cb15340a1e1f033208d9204}\index{lexer::Lexer@{lexer::Lexer}!Lexer@{Lexer}}
+\index{Lexer@{Lexer}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{Lexer()}{Lexer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a12ad771b6cb15340a1e1f033208d9204} 
+lexer\+::\+Lexer\+::\+Lexer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ another lexer. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classlexer_1_1_lexer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlexer_1_1_lexer_a079d688838e77f7d0f64142e070d8bf3}\index{lexer::Lexer@{lexer::Lexer}!addCombiningToken@{addCombiningToken}}
+\index{addCombiningToken@{addCombiningToken}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{addCombiningToken()}{addCombiningToken()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a079d688838e77f7d0f64142e070d8bf3} 
+void lexer\+::\+Lexer\+::add\+Combining\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} \&\&}]{new\+\_\+combining\+\_\+token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Adds combining tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+combining\+\_\+token} & -\/ a new combining token. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_ad7ea041c593c43e83910b23d5df65c7d}\index{lexer::Lexer@{lexer::Lexer}!addCombiningToken@{addCombiningToken}}
+\index{addCombiningToken@{addCombiningToken}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{addCombiningToken()}{addCombiningToken()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_ad7ea041c593c43e83910b23d5df65c7d} 
+void lexer\+::\+Lexer\+::add\+Combining\+Token (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} \&}]{new\+\_\+combining\+\_\+token}{}\end{DoxyParamCaption})}
+
+
+
+Adds combining tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+combining\+\_\+token} & -\/ a new combining token. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_a3a399745640820ffe196a547112c4fb1}\index{lexer::Lexer@{lexer::Lexer}!addIndividualChar@{addIndividualChar}}
+\index{addIndividualChar@{addIndividualChar}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{addIndividualChar()}{addIndividualChar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a3a399745640820ffe196a547112c4fb1} 
+void lexer\+::\+Lexer\+::add\+Individual\+Char (\begin{DoxyParamCaption}\item[{const wchar\+\_\+t \&}]{new\+\_\+individual\+\_\+char}{}\end{DoxyParamCaption})}
+
+
+
+Adds new individual char. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+individual\+\_\+char} & -\/ a new individual char. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_ad5dfecf51bca0565faa07fb91b107846}\index{lexer::Lexer@{lexer::Lexer}!addIndividualChar@{addIndividualChar}}
+\index{addIndividualChar@{addIndividualChar}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{addIndividualChar()}{addIndividualChar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_ad5dfecf51bca0565faa07fb91b107846} 
+void lexer\+::\+Lexer\+::add\+Individual\+Char (\begin{DoxyParamCaption}\item[{wchar\+\_\+t \&\&}]{new\+\_\+individual\+\_\+char}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Adds new individual char. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+individual\+\_\+char} & -\/ a new individual char. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_a79794c282a4e6fbb677f3587ea815521}\index{lexer::Lexer@{lexer::Lexer}!addSpecialAlphabet@{addSpecialAlphabet}}
+\index{addSpecialAlphabet@{addSpecialAlphabet}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{addSpecialAlphabet()}{addSpecialAlphabet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a79794c282a4e6fbb677f3587ea815521} 
+void lexer\+::\+Lexer\+::add\+Special\+Alphabet (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{new\+\_\+special\+\_\+alphabet}{}\end{DoxyParamCaption})}
+
+
+
+Adds new special alphabet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+special\+\_\+alphabet} & -\/ a new special alphabet. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_a00f21b7472d67af9b66ef3f7e7fd56d6}\index{lexer::Lexer@{lexer::Lexer}!addSpecialAlphabet@{addSpecialAlphabet}}
+\index{addSpecialAlphabet@{addSpecialAlphabet}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{addSpecialAlphabet()}{addSpecialAlphabet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a00f21b7472d67af9b66ef3f7e7fd56d6} 
+void lexer\+::\+Lexer\+::add\+Special\+Alphabet (\begin{DoxyParamCaption}\item[{std\+::wstring \&\&}]{new\+\_\+special\+\_\+alphabet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Adds new special alphabet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+special\+\_\+alphabet} & -\/ a new special alphabet. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_abeef96cf47a71966ec650f28b804adad}\index{lexer::Lexer@{lexer::Lexer}!createTokens@{createTokens}}
+\index{createTokens@{createTokens}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{createTokens()}{createTokens()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_abeef96cf47a71966ec650f28b804adad} 
+\mbox{\hyperlink{classlexer_1_1_lexer_contaner}{Lexer\+Contaner}} lexer\+::\+Lexer\+::create\+Tokens (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Opens the file and starts lexical analysis of the file contents. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & -\/ the file contents name. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_a8b8cd17dc2e40d59f58f39680917a58f}\index{lexer::Lexer@{lexer::Lexer}!createTokens@{createTokens}}
+\index{createTokens@{createTokens}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{createTokens()}{createTokens()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a8b8cd17dc2e40d59f58f39680917a58f} 
+\mbox{\hyperlink{classlexer_1_1_lexer_contaner}{Lexer\+Contaner}} lexer\+::\+Lexer\+::create\+Tokens (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Starts lexical analysis of the string contents. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & -\/ the string contents. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_a8b72314a862dc3d6be379833b83972c5}\index{lexer::Lexer@{lexer::Lexer}!createTokens@{createTokens}}
+\index{createTokens@{createTokens}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{createTokens()}{createTokens()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a8b72314a862dc3d6be379833b83972c5} 
+\mbox{\hyperlink{classlexer_1_1_lexer_contaner}{Lexer\+Contaner}} lexer\+::\+Lexer\+::create\+Tokens (\begin{DoxyParamCaption}\item[{std\+::wifstream \&}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Starts lexical analysis of the file contents. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & -\/ the file contents. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_acf9b22fae1a44886b420c0378f004fc4}\index{lexer::Lexer@{lexer::Lexer}!getIndividualChars@{getIndividualChars}}
+\index{getIndividualChars@{getIndividualChars}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{getIndividualChars()}{getIndividualChars()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_acf9b22fae1a44886b420c0378f004fc4} 
+std\+::wstring lexer\+::\+Lexer\+::get\+Individual\+Chars (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a individual chars. 
+
+\begin{DoxyReturn}{Returns}
+std\+::wstring 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_a2677256a1a5a2ff3caa4bea22c55bed9}\index{lexer::Lexer@{lexer::Lexer}!getSpecialAlphabets@{getSpecialAlphabets}}
+\index{getSpecialAlphabets@{getSpecialAlphabets}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{getSpecialAlphabets()}{getSpecialAlphabets()}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a2677256a1a5a2ff3caa4bea22c55bed9} 
+std\+::vector$<$ std\+::wstring $>$ lexer\+::\+Lexer\+::get\+Special\+Alphabets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a special alphabets. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::wstring$>$ 
+\end{DoxyReturn}
+\Hypertarget{classlexer_1_1_lexer_afed92926be884d1dff43a6004cd61b4d}\index{lexer::Lexer@{lexer::Lexer}!operator=@{operator=}}
+\index{operator=@{operator=}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_afed92926be884d1dff43a6004cd61b4d} 
+\mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \& lexer\+::\+Lexer\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Copy operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & -\/ another lexer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_a194de87903b6b28037bc3777a9f6043d}\index{lexer::Lexer@{lexer::Lexer}!operator=@{operator=}}
+\index{operator=@{operator=}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a194de87903b6b28037bc3777a9f6043d} 
+\mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \& lexer\+::\+Lexer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlexer_1_1_lexer}{Lexer}} \&\&}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & -\/ another lexer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_a9b9763fec8d17286e3acbde3df74537e}\index{lexer::Lexer@{lexer::Lexer}!setCombiningTokens@{setCombiningTokens}}
+\index{setCombiningTokens@{setCombiningTokens}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{setCombiningTokens()}{setCombiningTokens()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a9b9763fec8d17286e3acbde3df74537e} 
+void lexer\+::\+Lexer\+::set\+Combining\+Tokens (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} $>$ \&}]{new\+\_\+combining\+\_\+tokens}{}\end{DoxyParamCaption})}
+
+
+
+Sets combining tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+combining\+\_\+tokens} & -\/ a new combining tokens. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_a1280031106788b0c0d69450f5b814fb1}\index{lexer::Lexer@{lexer::Lexer}!setCombiningTokens@{setCombiningTokens}}
+\index{setCombiningTokens@{setCombiningTokens}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{setCombiningTokens()}{setCombiningTokens()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a1280031106788b0c0d69450f5b814fb1} 
+void lexer\+::\+Lexer\+::set\+Combining\+Tokens (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structlexer_1_1_combining_tokens}{Combining\+Tokens}} $>$ \&\&}]{new\+\_\+combining\+\_\+tokens}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Sets combining tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+combining\+\_\+tokens} & -\/ a new combining tokens. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_a0fbc5122c51d3aa8a172d808f634aa13}\index{lexer::Lexer@{lexer::Lexer}!setIndividualChars@{setIndividualChars}}
+\index{setIndividualChars@{setIndividualChars}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{setIndividualChars()}{setIndividualChars()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_a0fbc5122c51d3aa8a172d808f634aa13} 
+void lexer\+::\+Lexer\+::set\+Individual\+Chars (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{new\+\_\+individual\+\_\+chars}{}\end{DoxyParamCaption})}
+
+
+
+Sets new individual chars. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+individual\+\_\+chars} & -\/ a new individual chars. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_ad70b17fbe94105d863b85a9e341806cf}\index{lexer::Lexer@{lexer::Lexer}!setIndividualChars@{setIndividualChars}}
+\index{setIndividualChars@{setIndividualChars}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{setIndividualChars()}{setIndividualChars()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_ad70b17fbe94105d863b85a9e341806cf} 
+void lexer\+::\+Lexer\+::set\+Individual\+Chars (\begin{DoxyParamCaption}\item[{std\+::wstring \&\&}]{new\+\_\+individual\+\_\+chars}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Sets new individual chars. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+individual\+\_\+chars} & -\/ a new individual chars. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_abb0656ffa79927436f31aa836b12b983}\index{lexer::Lexer@{lexer::Lexer}!setSpecialAlphabets@{setSpecialAlphabets}}
+\index{setSpecialAlphabets@{setSpecialAlphabets}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{setSpecialAlphabets()}{setSpecialAlphabets()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_abb0656ffa79927436f31aa836b12b983} 
+void lexer\+::\+Lexer\+::set\+Special\+Alphabets (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::wstring $>$ \&}]{new\+\_\+special\+\_\+alphabets}{}\end{DoxyParamCaption})}
+
+
+
+Sets new special alphabets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+special\+\_\+alphabets} & -\/ a new special alphabets. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlexer_1_1_lexer_aa80830a74fd38d91e07e0a4752b5fc7e}\index{lexer::Lexer@{lexer::Lexer}!setSpecialAlphabets@{setSpecialAlphabets}}
+\index{setSpecialAlphabets@{setSpecialAlphabets}!lexer::Lexer@{lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{setSpecialAlphabets()}{setSpecialAlphabets()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlexer_1_1_lexer_aa80830a74fd38d91e07e0a4752b5fc7e} 
+void lexer\+::\+Lexer\+::set\+Special\+Alphabets (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::wstring $>$ \&\&}]{new\+\_\+special\+\_\+alphabets}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Sets new special alphabets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+special\+\_\+alphabets} & -\/ a new special alphabets. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/lexer/lexer.\+h\end{DoxyCompactItemize}

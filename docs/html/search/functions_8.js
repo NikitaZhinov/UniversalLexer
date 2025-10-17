@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['setcombiningtokens_0',['setCombiningTokens',['../classlexer_1_1_lexer.html#a9b9763fec8d17286e3acbde3df74537e',1,'lexer::Lexer::setCombiningTokens(const std::vector&lt; CombiningTokens &gt; &amp;new_combining_tokens)'],['../classlexer_1_1_lexer.html#a1280031106788b0c0d69450f5b814fb1',1,'lexer::Lexer::setCombiningTokens(std::vector&lt; CombiningTokens &gt; &amp;&amp;new_combining_tokens) noexcept']]],
+  ['setindividualchars_1',['setIndividualChars',['../classlexer_1_1_lexer.html#a0fbc5122c51d3aa8a172d808f634aa13',1,'lexer::Lexer::setIndividualChars(const std::wstring &amp;new_individual_chars)'],['../classlexer_1_1_lexer.html#ad70b17fbe94105d863b85a9e341806cf',1,'lexer::Lexer::setIndividualChars(std::wstring &amp;&amp;new_individual_chars) noexcept']]],
+  ['setspecialalphabets_2',['setSpecialAlphabets',['../classlexer_1_1_lexer.html#abb0656ffa79927436f31aa836b12b983',1,'lexer::Lexer::setSpecialAlphabets(const std::vector&lt; std::wstring &gt; &amp;new_special_alphabets)'],['../classlexer_1_1_lexer.html#aa80830a74fd38d91e07e0a4752b5fc7e',1,'lexer::Lexer::setSpecialAlphabets(std::vector&lt; std::wstring &gt; &amp;&amp;new_special_alphabets) noexcept']]],
+  ['settext_3',['setText',['../classlexer_1_1_token.html#a1aa44c6675aa323e244e87492eb8dc08',1,'lexer::Token::setText(const std::wstring &amp;new_text)'],['../classlexer_1_1_token.html#a780ea963cd94eff8c046f4867a28f4f9',1,'lexer::Token::setText(std::wstring &amp;&amp;new_text) noexcept']]]
+];

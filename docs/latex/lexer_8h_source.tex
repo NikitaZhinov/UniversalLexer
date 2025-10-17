@@ -1,0 +1,104 @@
+\doxysection{lexer.\+h}
+\hypertarget{lexer_8h_source}{}\label{lexer_8h_source}\index{include/lexer/lexer.h@{include/lexer/lexer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}lexer-\/contaner.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }lexer\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f}{Lexer}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\_CurrentStats\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ line\_number;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ lexer\_contaner\_t\ token\_lines;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ std::wstring\ token\_name;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlexer_1_1_token_line}{TokenLine}}\ token\_line;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{wchar\_t}\ c;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ std::wstring::const\_iterator\ char\_it;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ std::wstring::const\_iterator\ end\_it;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::vector<std::wstring>\ \_special\_alphabets;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::wstring\ \_individual\_chars;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::vector<CombiningTokens>\ \_combining\_tokens;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::wstring\ \_separators;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ Token::define\_id\_func\_t\ \_defineTokenId;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::vector<CombiningTokens>::iterator\ \_isCombiningToken(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_token}{Token}}\&\ token);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_isCharFromSpecialAlhpabet(\textcolor{keywordtype}{wchar\_t}\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_isDifferentAlphabets(\textcolor{keywordtype}{wchar\_t}\ a,\ \textcolor{keywordtype}{wchar\_t}\ b)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \_isCloseToken(\_CurrentStats\&\ current\_stats,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<lexer::CombiningTokens>::iterator\&\ close\_token)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_pushToken(\_CurrentStats\&\ current\_stats);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_pushText(\_CurrentStats\&\ current\_stats,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<lexer::CombiningTokens>::iterator\&\ close\_token);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_addIndividualChars(\_CurrentStats\&\ current\_stats);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_addSpecialAlphabet(\_CurrentStats\&\ current\_stats);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_nextLine(\_CurrentStats\&\ current\_stats);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f}{Lexer}}(\textcolor{keyword}{const}\ std::vector<std::wstring>\&\ special\_alphabets,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::wstring\&\ individual\_chars,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<CombiningTokens>\&\ combining\_tokens,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::wstring\&\ separators,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Token::define\_id\_func\_t\ defineTokenIdFunc\ =\ lexer::defineTokenId<uint64\_t>);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_acc0ad9dc5dd5321aa52f43d1fcb936e7}{Lexer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f}{Lexer}}\&\ other);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_a12ad771b6cb15340a1e1f033208d9204}{Lexer}}(\mbox{\hyperlink{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f}{Lexer}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f}{Lexer}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_afed92926be884d1dff43a6004cd61b4d}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f}{Lexer}}\&\ right);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f}{Lexer}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_a194de87903b6b28037bc3777a9f6043d}{operator=}}(\mbox{\hyperlink{classlexer_1_1_lexer_ab61511b7a52e6ad2601d957301f7889f}{Lexer}}\&\&\ right)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_abb0656ffa79927436f31aa836b12b983}{setSpecialAlphabets}}(\textcolor{keyword}{const}\ std::vector<std::wstring>\&\ new\_special\_alphabets);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_a79794c282a4e6fbb677f3587ea815521}{addSpecialAlphabet}}(\textcolor{keyword}{const}\ std::wstring\&\ new\_special\_alphabet);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_aa80830a74fd38d91e07e0a4752b5fc7e}{setSpecialAlphabets}}(std::vector<std::wstring>\&\&\ new\_special\_alphabets)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_a00f21b7472d67af9b66ef3f7e7fd56d6}{addSpecialAlphabet}}(std::wstring\&\&\ new\_special\_alphabet)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_a0fbc5122c51d3aa8a172d808f634aa13}{setIndividualChars}}(\textcolor{keyword}{const}\ std::wstring\&\ new\_individual\_chars);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_a3a399745640820ffe196a547112c4fb1}{addIndividualChar}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\&\ new\_individual\_char);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_ad70b17fbe94105d863b85a9e341806cf}{setIndividualChars}}(std::wstring\&\&\ new\_individual\_chars)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_ad5dfecf51bca0565faa07fb91b107846}{addIndividualChar}}(\textcolor{keywordtype}{wchar\_t}\&\&\ new\_individual\_char)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_a9b9763fec8d17286e3acbde3df74537e}{setCombiningTokens}}(\textcolor{keyword}{const}\ std::vector<CombiningTokens>\&\ new\_combining\_tokens);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_ad7ea041c593c43e83910b23d5df65c7d}{addCombiningToken}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structlexer_1_1_combining_tokens}{CombiningTokens}}\&\ new\_combining\_token);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_a1280031106788b0c0d69450f5b814fb1}{setCombiningTokens}}(std::vector<CombiningTokens>\&\&\ new\_combining\_tokens)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_a079d688838e77f7d0f64142e070d8bf3}{addCombiningToken}}(\mbox{\hyperlink{structlexer_1_1_combining_tokens}{CombiningTokens}}\&\&\ new\_combining\_token)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ std::vector<std::wstring>\ \mbox{\hyperlink{classlexer_1_1_lexer_a2677256a1a5a2ff3caa4bea22c55bed9}{getSpecialAlphabets}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ std::wstring\ \mbox{\hyperlink{classlexer_1_1_lexer_acf9b22fae1a44886b420c0378f004fc4}{getIndividualChars}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ std::vector<CombiningTokens>\ \mbox{\hyperlink{classlexer_1_1_lexer_ae7c4dce398a7278308acfc9dd313b8c2}{getCombiningTokens}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner}{LexerContaner}}\ \mbox{\hyperlink{classlexer_1_1_lexer_abeef96cf47a71966ec650f28b804adad}{createTokens}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_name);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner}{LexerContaner}}\ \mbox{\hyperlink{classlexer_1_1_lexer_a8b72314a862dc3d6be379833b83972c5}{createTokens}}(std::wifstream\&\ file);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_contaner}{LexerContaner}}\ \mbox{\hyperlink{classlexer_1_1_lexer_a8b8cd17dc2e40d59f58f39680917a58f}{createTokens}}(\textcolor{keyword}{const}\ std::wstring\&\ str);}
+\DoxyCodeLine{00220\ \ \ \ \ \};}
+\DoxyCodeLine{00221\ \}\ \ \textcolor{comment}{//\ namespace\ lexer}}
+
+\end{DoxyCode}

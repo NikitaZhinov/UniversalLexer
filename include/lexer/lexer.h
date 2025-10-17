@@ -1,6 +1,6 @@
 #pragma once
 
-#include "token.h"
+#include "lexer-contaner.h"
 
 #include <string>
 #include <vector>
@@ -11,9 +11,10 @@ namespace lexer {
      * @brief It is used to divide the contents of a file into tokens.
      */
     class Lexer {
+    private:
         struct _CurrentStats {
-            std::size_t line_number;
-            std::vector<TokenLine> token_lines;
+            size_t line_number;
+            lexer_contaner_t token_lines;
             std::wstring token_name;
             TokenLine token_line;
             wchar_t c;
@@ -201,20 +202,20 @@ namespace lexer {
          *
          * @param file_name - the file contents name.
          */
-        std::vector<TokenLine> createTokens(const char* file_name);
+        LexerContaner createTokens(const char* file_name);
 
         /**
          * @brief Starts lexical analysis of the file contents.
          *
          * @param file - the file contents.
          */
-        std::vector<TokenLine> createTokens(std::wifstream& file);
+        LexerContaner createTokens(std::wifstream& file);
 
         /**
          * @brief Starts lexical analysis of the string contents.
          *
          * @param str - the string contents.
          */
-        std::vector<TokenLine> createTokens(const std::wstring& str);
+        LexerContaner createTokens(const std::wstring& str);
     };
 }  // namespace lexer

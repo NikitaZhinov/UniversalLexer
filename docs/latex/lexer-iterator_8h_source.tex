@@ -1,0 +1,197 @@
+\doxysection{lexer-\/iterator.h}
+\hypertarget{lexer-iterator_8h_source}{}\label{lexer-iterator_8h_source}\index{include/lexer/lexer-\/iterator.h@{include/lexer/lexer-\/iterator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}token.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }lexer\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{using\ }lexer\_contaner\_t\ =\ std::vector<TokenLine>;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ LineIterator,\ \textcolor{keyword}{class}\ TokenIterator,\ \textcolor{keyword}{class}\ Iterator>}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }contaner\ =\ lexer\_contaner\_t;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }line\_it\_t\ =\ LineIterator;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }token\_it\_t\ =\ TokenIterator;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ line\_it\_t\ \_current\_line;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ token\_it\_t\ \_current\_token;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ line\_it\_t\ \_start\_line;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ line\_it\_t\ \_end\_line;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a5da415b5b77737cf4f9da217ca391b10}{exceptionOutOfRange}}()\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}no\ more\ tokens"{}});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ token\_it\_t\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aaddb1d9489d9350fd889e4c8f0aac158}{getBegin}}()\ =\ 0;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}(\textcolor{keyword}{const}\ line\_it\_t\&\ start\_line,\ \textcolor{keyword}{const}\ line\_it\_t\&\ end\_line,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ token\_it\_t\&\ start\_token)\ :}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \_start\_line(start\_line),}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \_end\_line(end\_line),}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \_current\_line(start\_line),}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \_current\_token(start\_token)\ \{\}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a17d451be65a1d8bad69ce911514a0955}{LexerTemplateIterator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\&\ other)\ :}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \_start\_line(other.\_start\_line),}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \_end\_line(other.\_end\_line),}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \_current\_line(other.\_current\_line),}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \_current\_token(other.\_current\_token)\ \{\}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_abc4a6fd6d6ec3c90aec245c7d2abe16f}{LexerTemplateIterator}}(\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\&\&\ other)\ noexcept\ :}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \_start\_line(std::move(other.\_start\_line)),}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \_end\_line(std::move(other.\_end\_line)),}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \_current\_line(std::move(other.\_current\_line)),}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \_current\_token(std::move(other.\_current\_token))\ \{\}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a4f481a6272a41f4906d1dd9f249f93b1}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\&\ other)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \_current\_line\ =\ other.\_current\_line;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \_current\_token\ =\ other.\_current\_token;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \_start\_line\ =\ other.\_start\_line;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \_end\_line\ =\ other.\_end\_line;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a165c48b8eea3b134cff432fb71b9b893}{operator=}}(\mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\&\&\ other)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \_current\_line\ =\ std::move(other.\_current\_line);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \_current\_token\ =\ std::move(other.\_current\_token);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \_start\_line\ =\ std::move(other.\_start\_line);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \_end\_line\ =\ std::move(other.\_end\_line);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ Iterator\&\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_ae7dad2a5bb49e72bfe7a1a26a97cdb61}{operator++}}(Iterator\&\ it)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it.\_current\_token\ !=}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it.getBegin()\ +\ (it.\_current\_line-\/>tokens.size()\ -\/\ 1))\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it.\_current\_token;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (it.\_current\_line\ !=\ it.\_end\_line)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it.\_current\_line;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it.\_current\_line\ !=\ it.\_end\_line)\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it.\_current\_token\ =\ it.getBegin();}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a5da415b5b77737cf4f9da217ca391b10}{exceptionOutOfRange}}();}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ Iterator\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_ab203268af2ca87e25c19746956c0cdb3}{operator++}}(Iterator\&\ it,\ \textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ temp\ =\ it;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ Iterator\&\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a4b95eb7137a733db82afa65bf0bd243d}{operator-\/-\/}}(Iterator\&\ it)\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it.\_current\_token\ !=\ it.getBegin())\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/it.\_current\_token;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (it.\_current\_line\ !=\ it.\_end\_line)\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/it.\_current\_line;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it.\_current\_line\ !=\ it.\_end\_line)\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it.\_current\_token\ =}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it.getBegin()\ +\ (it.\_current\_line-\/>tokens.size()\ -\/\ 1);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a5da415b5b77737cf4f9da217ca391b10}{exceptionOutOfRange}}();}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ Iterator\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_abdb1c197cb896a8c4ee8803598685bbb}{operator-\/-\/}}(Iterator\&\ it,\ \textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ temp\ =\ it;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/it;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ Iterator\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_abbb9db2d59d2edb06e1ba2db51b15b27}{operator+}}(\textcolor{keyword}{const}\ Iterator\&\ start,\ \textcolor{keywordtype}{size\_t}\ n)\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ Iterator\ it\ =\ start;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (n-\/-\/)\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ Iterator\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa19191000a6285c591d68a96b3ede4c0}{operator-\/}}(\textcolor{keyword}{const}\ Iterator\&\ start,\ \textcolor{keywordtype}{size\_t}\ n)\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ Iterator\ it\ =\ start;}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (n-\/-\/)\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/it;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a174b60e4cff9f3938d911da7de035c2d}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\&\ l,}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\&\ r)\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ l.\_current\_line\ ==\ r.\_current\_line\ \&\&}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.\_current\_token\ ==\ r.\_current\_token;}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a9aa77b012b313f140782a9d11e887893}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\&\ l,}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}\&\ r)\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(l\ ==\ r);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_token}{Token}}\&\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a6175eaf27e053a2d4f155adf75992a1c}{operator*}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\_current\_token;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlexer_1_1_token}{Token}}*\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a5c830639a4633ffeebdf0d8ba11e8cff}{operator-\/>}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&(*\_current\_token);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlexer_1_1_token_line}{TokenLine}}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a22d90ffa1722441c6b22cf73b932a132}{getLine}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\_current\_line;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_token}{Token}}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_a12edf2c81bf4c0cd16409c4186d4c910}{getToken}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\_current\_token;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \ \ \};}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlexer_1_1_lexer_iterator_aa637c2789ca4fb1186b8f6958844719f}{LexerIterator}}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}<lexer\_contaner\_t::iterator,}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TokenLine::token\_contaner\_t::iterator,}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LexerIterator>\ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_iterator_aa637c2789ca4fb1186b8f6958844719f}{LexerIterator}}(contaner\&\ c);}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ token\_it\_t\ \mbox{\hyperlink{classlexer_1_1_lexer_iterator_a79855da5b5de6db740209ad81d816f20}{getBegin}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00316\ \ \ \ \ \};}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlexer_1_1_lexer_const_iterator_a8526e5e8f1f690dd168fe942d376a35e}{LexerConstIterator}}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}<lexer\_contaner\_t::const\_iterator,}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TokenLine::token\_contaner\_t::const\_iterator,}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LexerConstIterator>\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_const_iterator_a8526e5e8f1f690dd168fe942d376a35e}{LexerConstIterator}}(\textcolor{keyword}{const}\ contaner\&\ c);}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ token\_it\_t\ \mbox{\hyperlink{classlexer_1_1_lexer_const_iterator_ab2c6feea6caf63f8874ffdf5bfcd322d}{getBegin}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00340\ \ \ \ \ \};}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlexer_1_1_lexer_reverse_iterator_a61555aee5e3e85cc6dd094e46e35fd0b}{LexerReverseIterator}}}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}<lexer\_contaner\_t::reverse\_iterator,}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TokenLine::token\_contaner\_t::reverse\_iterator,}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LexerReverseIterator>\ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_reverse_iterator_a61555aee5e3e85cc6dd094e46e35fd0b}{LexerReverseIterator}}(contaner\&\ c);}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ token\_it\_t\ \mbox{\hyperlink{classlexer_1_1_lexer_reverse_iterator_a28a6cffaf8a643650d04c1a83da2dbcd}{getBegin}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00364\ \ \ \ \ \};}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlexer_1_1_lexer_const_reverse_iterator_a117e650b88b6f3fa71e90100b52e41f8}{LexerConstReverseIterator}}}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlexer_1_1_lexer_template_iterator_aa90baaf71ac0ecc092d030ee4a4f67c0}{LexerTemplateIterator}}<}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lexer\_contaner\_t::const\_reverse\_iterator,}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TokenLine::token\_contaner\_t::const\_reverse\_iterator,}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LexerConstReverseIterator>\ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlexer_1_1_lexer_const_reverse_iterator_a117e650b88b6f3fa71e90100b52e41f8}{LexerConstReverseIterator}}(\textcolor{keyword}{const}\ contaner\&\ c);}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ token\_it\_t\ \mbox{\hyperlink{classlexer_1_1_lexer_const_reverse_iterator_a72c9d5657a47a719d175f8e65d168e6a}{getBegin}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00389\ \ \ \ \ \};}
+\DoxyCodeLine{00390\ \}\ \ \textcolor{comment}{//\ namespace\ lexer}}
+
+\end{DoxyCode}

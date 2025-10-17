@@ -1,0 +1,194 @@
+\doxysection{lexer\+::Token\+Line Struct Reference}
+\hypertarget{structlexer_1_1_token_line}{}\label{structlexer_1_1_token_line}\index{lexer::TokenLine@{lexer::TokenLine}}
+
+
+Defines a string of tokens. In addition to the tokens themselves, the row number and the original row are stored.  
+
+
+
+
+{\ttfamily \#include $<$token.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlexer_1_1_token_line_acc04e366d1f250ca907a705fe4fa3567}\label{structlexer_1_1_token_line_acc04e366d1f250ca907a705fe4fa3567} 
+using {\bfseries token\+\_\+contaner\+\_\+t} = std\+::vector$<$\mbox{\hyperlink{classlexer_1_1_token}{Token}}$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlexer_1_1_token_line_ac9c7fca212b384ae341d70a34c59efd3}\label{structlexer_1_1_token_line_ac9c7fca212b384ae341d70a34c59efd3} 
+{\bfseries Token\+Line} ()
+\begin{DoxyCompactList}\small\item\em Sets line\+\_\+number = 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlexer_1_1_token_line_a5019b55a031ea470c9ff12926b6dc5a9}{Token\+Line}} (size\+\_\+t \mbox{\hyperlink{structlexer_1_1_token_line_a43d14fcaf3789a04a8e787e7c75605ec}{line\+\_\+number}}, const std\+::wstring \&\mbox{\hyperlink{structlexer_1_1_token_line_a440e6227dda25954a305aae96a620732}{original}}, const token\+\_\+contaner\+\_\+t \&\mbox{\hyperlink{structlexer_1_1_token_line_a48985dabc4a002d25d0b2eff31b66a1c}{tokens}})
+\begin{DoxyCompactList}\small\item\em Sets line\+\_\+number, original and tokens. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlexer_1_1_token_line_a1fc48dacdf502dbd803c3049a317e872}{Token\+Line}} (const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlexer_1_1_token_line_af6c29a16988d84e876bdcf5638606775}{Token\+Line}} (\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \& \mbox{\hyperlink{structlexer_1_1_token_line_a7d292fdbf2cb9e5939e38743a69b3b10}{operator=}} (const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&right)
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \& \mbox{\hyperlink{structlexer_1_1_token_line_a9457904a8c5083170acaec9d50821758}{operator=}} (\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&\&right) noexcept
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlexer_1_1_token_line_a43d14fcaf3789a04a8e787e7c75605ec}\label{structlexer_1_1_token_line_a43d14fcaf3789a04a8e787e7c75605ec} 
+size\+\_\+t {\bfseries line\+\_\+number}
+\begin{DoxyCompactList}\small\item\em The row number. \end{DoxyCompactList}\item 
+\Hypertarget{structlexer_1_1_token_line_a440e6227dda25954a305aae96a620732}\label{structlexer_1_1_token_line_a440e6227dda25954a305aae96a620732} 
+std\+::wstring {\bfseries original}
+\begin{DoxyCompactList}\small\item\em The original row. \end{DoxyCompactList}\item 
+\Hypertarget{structlexer_1_1_token_line_a48985dabc4a002d25d0b2eff31b66a1c}\label{structlexer_1_1_token_line_a48985dabc4a002d25d0b2eff31b66a1c} 
+token\+\_\+contaner\+\_\+t {\bfseries tokens}
+\begin{DoxyCompactList}\small\item\em List of tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structlexer_1_1_token_line_af13cea296fc4962cabd929ebc9cc00f0}{operator==}} (const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&left, const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&right)
+\begin{DoxyCompactList}\small\item\em Compares the Token\+Lines. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structlexer_1_1_token_line_a80cd8ed93d4f4fc8ff264fef110b58b3}{operator!=}} (const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&left, const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&right)
+\begin{DoxyCompactList}\small\item\em Compares the Token\+Lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a string of tokens. In addition to the tokens themselves, the row number and the original row are stored. 
+
+\label{doc-constructors}
+\Hypertarget{structlexer_1_1_token_line_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structlexer_1_1_token_line_a5019b55a031ea470c9ff12926b6dc5a9}\index{lexer::TokenLine@{lexer::TokenLine}!TokenLine@{TokenLine}}
+\index{TokenLine@{TokenLine}!lexer::TokenLine@{lexer::TokenLine}}
+\doxysubsubsection{\texorpdfstring{TokenLine()}{TokenLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{structlexer_1_1_token_line_a5019b55a031ea470c9ff12926b6dc5a9} 
+lexer\+::\+Token\+Line\+::\+Token\+Line (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{line\+\_\+number}{, }\item[{const std\+::wstring \&}]{original}{, }\item[{const token\+\_\+contaner\+\_\+t \&}]{tokens}{}\end{DoxyParamCaption})}
+
+
+
+Sets line\+\_\+number, original and tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line\+\_\+number} & -\/ a line number. \\
+\hline
+{\em original} & -\/ a original row. \\
+\hline
+{\em tokens} & -\/ a list of tokens. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structlexer_1_1_token_line_a1fc48dacdf502dbd803c3049a317e872}\index{lexer::TokenLine@{lexer::TokenLine}!TokenLine@{TokenLine}}
+\index{TokenLine@{TokenLine}!lexer::TokenLine@{lexer::TokenLine}}
+\doxysubsubsection{\texorpdfstring{TokenLine()}{TokenLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{structlexer_1_1_token_line_a1fc48dacdf502dbd803c3049a317e872} 
+lexer\+::\+Token\+Line\+::\+Token\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ another \doxylink{structlexer_1_1_token_line}{Token\+Line}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structlexer_1_1_token_line_af6c29a16988d84e876bdcf5638606775}\index{lexer::TokenLine@{lexer::TokenLine}!TokenLine@{TokenLine}}
+\index{TokenLine@{TokenLine}!lexer::TokenLine@{lexer::TokenLine}}
+\doxysubsubsection{\texorpdfstring{TokenLine()}{TokenLine()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{structlexer_1_1_token_line_af6c29a16988d84e876bdcf5638606775} 
+lexer\+::\+Token\+Line\+::\+Token\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ another \doxylink{structlexer_1_1_token_line}{Token\+Line}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{structlexer_1_1_token_line_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structlexer_1_1_token_line_a7d292fdbf2cb9e5939e38743a69b3b10}\index{lexer::TokenLine@{lexer::TokenLine}!operator=@{operator=}}
+\index{operator=@{operator=}!lexer::TokenLine@{lexer::TokenLine}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structlexer_1_1_token_line_a7d292fdbf2cb9e5939e38743a69b3b10} 
+\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \& lexer\+::\+Token\+Line\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Copy operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & -\/ another \doxylink{structlexer_1_1_token_line}{Token\+Line}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structlexer_1_1_token_line_a9457904a8c5083170acaec9d50821758}\index{lexer::TokenLine@{lexer::TokenLine}!operator=@{operator=}}
+\index{operator=@{operator=}!lexer::TokenLine@{lexer::TokenLine}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structlexer_1_1_token_line_a9457904a8c5083170acaec9d50821758} 
+\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \& lexer\+::\+Token\+Line\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&\&}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & -\/ another \doxylink{structlexer_1_1_token_line}{Token\+Line}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-related-members}
+\Hypertarget{structlexer_1_1_token_line_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{structlexer_1_1_token_line_a80cd8ed93d4f4fc8ff264fef110b58b3}\index{lexer::TokenLine@{lexer::TokenLine}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!lexer::TokenLine@{lexer::TokenLine}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily \label{structlexer_1_1_token_line_a80cd8ed93d4f4fc8ff264fef110b58b3} 
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&}]{left}{, }\item[{const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares the Token\+Lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & -\/ left \doxylink{structlexer_1_1_token_line}{Token\+Line}. \\
+\hline
+{\em right} & -\/ right \doxylink{structlexer_1_1_token_line}{Token\+Line}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{structlexer_1_1_token_line_af13cea296fc4962cabd929ebc9cc00f0}\index{lexer::TokenLine@{lexer::TokenLine}!operator==@{operator==}}
+\index{operator==@{operator==}!lexer::TokenLine@{lexer::TokenLine}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{structlexer_1_1_token_line_af13cea296fc4962cabd929ebc9cc00f0} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&}]{left}{, }\item[{const \mbox{\hyperlink{structlexer_1_1_token_line}{Token\+Line}} \&}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Compares the Token\+Lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & -\/ left \doxylink{structlexer_1_1_token_line}{Token\+Line}. \\
+\hline
+{\em right} & -\/ right \doxylink{structlexer_1_1_token_line}{Token\+Line}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/lexer/token.\+h\end{DoxyCompactItemize}
